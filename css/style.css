@@ -82,62 +82,92 @@ body {
 .lang-nav {
   display: inline-flex;
   align-items: stretch;
-  background: linear-gradient(to bottom, var(--border-bevel-top) 0%, var(--border-bevel-top) 1px, var(--bg-card) 1px, var(--bg-card-inner) 100%);
+  background: #fff;
   border: 1px solid var(--border-light);
   border-radius: var(--radius);
-  padding: 4px;
-  box-shadow: var(--shadow-sm);
-  gap: 3px;
+  padding: 5px;
+  box-shadow: var(--shadow-md);
+  gap: 4px;
   flex-shrink: 0;
 }
 
-.lang-nav__btn {
+.lang-nav a.lang-nav__btn,
+.lang-nav a.lang-nav__btn:link,
+.lang-nav a.lang-nav__btn:visited,
+.lang-nav a.lang-nav__btn:hover,
+.lang-nav a.lang-nav__btn:active {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 58px;
-  padding: 0.4rem 0.9rem;
-  text-decoration: none;
+  min-width: 64px;
+  padding: 0.45rem 1rem;
+  text-decoration: none !important;
   border-radius: calc(var(--radius-sm) + 2px);
-  transition: color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.2s;
-  color: var(--text-muted);
+  border: 2px solid transparent;
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.2s, opacity 0.2s, border-color 0.2s;
+  cursor: pointer;
 }
 
-/* PT — verde e amarelo */
-.lang-nav__btn[hreflang="pt-BR"] {
-  color: #1a6b34;
-}
-
-.lang-nav__btn[hreflang="pt-BR"]:hover:not(.is-active) {
-  background: linear-gradient(180deg, rgba(0, 156, 59, 0.14) 0%, rgba(255, 223, 0, 0.22) 100%);
-  color: #009c3b;
-}
-
-.lang-nav__btn[hreflang="pt-BR"].is-active {
-  background: linear-gradient(135deg, #009c3b 0%, #00a844 50%, #ffdf00 100%);
-  box-shadow: 0 2px 8px rgba(0, 156, 59, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-  transform: translateY(-1px);
-}
-
-/* EN — vermelho e azul */
-.lang-nav__btn[hreflang="en"] {
-  color: #1e3a7a;
-}
-
-.lang-nav__btn[hreflang="en"]:hover:not(.is-active) {
-  background: linear-gradient(180deg, rgba(178, 34, 52, 0.12) 0%, rgba(0, 40, 104, 0.16) 100%);
-  color: #b22234;
-}
-
-.lang-nav__btn[hreflang="en"].is-active {
-  background: linear-gradient(135deg, #b22234 0%, #c41e3a 48%, #002868 100%);
-  box-shadow: 0 2px 8px rgba(0, 40, 104, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  color: #fff;
+/* PT — verde e amarelo (sempre visível) */
+.lang-nav a.lang-nav__btn--pt,
+.lang-nav a.lang-nav__btn--pt:link,
+.lang-nav a.lang-nav__btn--pt:visited {
+  background: linear-gradient(145deg, #009c3b 0%, #00b347 55%, #ffdf00 100%);
+  color: #fff !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 6px rgba(0, 156, 59, 0.25);
+}
+
+.lang-nav a.lang-nav__btn--pt:hover {
+  background: linear-gradient(145deg, #00b347 0%, #009c3b 50%, #ffe033 100%);
+  color: #fff !important;
   transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 156, 59, 0.35);
+}
+
+.lang-nav a.lang-nav__btn--pt.is-active {
+  border-color: #006b28;
+  box-shadow: 0 3px 12px rgba(0, 156, 59, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.lang-nav a.lang-nav__btn--pt:not(.is-active) {
+  opacity: 0.72;
+  filter: saturate(0.85);
+}
+
+/* EN — vermelho e azul (sempre visível) */
+.lang-nav a.lang-nav__btn--en,
+.lang-nav a.lang-nav__btn--en:link,
+.lang-nav a.lang-nav__btn--en:visited {
+  background: linear-gradient(145deg, #b22234 0%, #dc2626 45%, #002868 100%);
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 2px 6px rgba(0, 40, 104, 0.25);
+}
+
+.lang-nav a.lang-nav__btn--en:hover {
+  background: linear-gradient(145deg, #dc2626 0%, #b22234 45%, #003d99 100%);
+  color: #fff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 40, 104, 0.35);
+}
+
+.lang-nav a.lang-nav__btn--en.is-active {
+  border-color: #001a4d;
+  box-shadow: 0 3px 12px rgba(0, 40, 104, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.lang-nav a.lang-nav__btn--en:not(.is-active) {
+  opacity: 0.72;
+  filter: saturate(0.85);
+}
+
+.lang-nav a.lang-nav__btn.is-active {
+  opacity: 1;
+  filter: none;
 }
 
 .lang-nav__code {
