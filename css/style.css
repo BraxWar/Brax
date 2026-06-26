@@ -139,6 +139,23 @@ body {
   background: rgba(249, 198, 51, 0.12);
 }
 
+/* Banner topo */
+.top-banner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 0;
+}
+
+.top-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+}
+
 /* Hero */
 .hero {
   text-align: center;
@@ -194,7 +211,7 @@ body {
 .cards-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem 4rem;
+  padding: 1.25rem 1.5rem 4rem;
 }
 
 .section-title {
